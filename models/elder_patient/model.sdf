@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+  <model name="elder_patient">
+    <pose>0 0 0 0 0 0</pose>
+    <static>false</static>
+    <link name="link">
+      	<collision name="elder_patient_collision">
+        	<geometry>
+            <mesh>
+                <uri>model://elder_patient/meshes/elder_patient.dae</uri>
+            </mesh>
+        	</geometry>
+      	</collision>
+ 		<visual name="elder_patient_visual">
+   			<geometry>
+          <mesh>
+              <uri>model://elder_patient/meshes/elder_patient.dae</uri>
+          </mesh>
+   			</geometry>
+ 		</visual>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+  <model name="device_1">
+    <pose>0 0 0 0 0 0</pose>
+    <static>false</static>
+    <link name="link">
+      	<collision name="device_1_collision">
+        	<geometry>
+            <mesh>
+                <uri>model://device_1/meshes/device_1.dae</uri>
+            </mesh>
+        	</geometry>
+      	</collision>
+ 		<visual name="device_1_visual">
+   			<geometry>
+          <mesh>
+              <uri>model://device_1/meshes/device_1.dae</uri>
+          </mesh>
+   			</geometry>
+ 		</visual>
+    </link>
+  </model>
+</sdf>

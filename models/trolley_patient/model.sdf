@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+  <model name="trolley_patient">
+    <pose>0 0 0 0 0 0</pose>
+    <static>false</static>
+    <link name="link">
+      	<collision name="trolley_patient_collision">
+        	<geometry>
+            <mesh>
+                <uri>model://trolley_patient/meshes/trolley_patient.dae</uri>
+            </mesh>
+        	</geometry>
+      	</collision>
+ 		<visual name="trolley_patient_visual">
+   			<geometry>
+          <mesh>
+              <uri>model://trolley_patient/meshes/trolley_patient.dae</uri>
+          </mesh>
+   			</geometry>
+ 		</visual>
+    </link>
+  </model>
+</sdf>

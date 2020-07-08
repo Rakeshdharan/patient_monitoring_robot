@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+  <model name="nurse">
+    <pose>0 0 0 0 0 0</pose>
+    <static>false</static>
+    <link name="link">
+      	<collision name="nurse_collision">
+        	<geometry>
+            <mesh>
+                <uri>model://nurse/meshes/nurse.dae</uri>
+            </mesh>
+        	</geometry>
+      	</collision>
+ 		<visual name="nurse_visual">
+   			<geometry>
+          <mesh>
+              <uri>model://nurse/meshes/nurse.dae</uri>
+          </mesh>
+   			</geometry>
+ 		</visual>
+    </link>
+  </model>
+</sdf>
