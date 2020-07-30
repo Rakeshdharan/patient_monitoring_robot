@@ -18,14 +18,14 @@
     <collision name="collision_chassis">
       <origin rpy="0 0 1.5707" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://pmr/meshes/link_chassis.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://pmr/meshes/base.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
     
     <visual>
       <origin rpy="0 0 1.5707" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://pmr/meshes/link_chassis.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://pmr/meshes/base.dae" scale="1 1 1"/>
       </geometry>
       <material name="blue"/>
     </visual>
@@ -54,64 +54,136 @@
     </inertial>
   </link>
 
-  
-
-
-  <link name="castor_front_link">    
+  <link name="castor_front_link">
     <inertial>
       <mass value="0.02"/>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <inertia ixx="0.00052666666" ixy="0" ixz="0" iyy="0.00052666666" iyz="0" izz="0.001"/>
-    </inertial>
-    
+    </inertial>  
     <collision name="castor_collision">
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <sphere radius="0.025"/>
+        <mesh filename="package://pmr/meshes/har_castor_ball.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
     
     <visual name="castor_visual">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <sphere radius="0.025"/>
+        <mesh filename="package://pmr/meshes/har_castor_ball.stl" scale="0.001 0.001 0.001"/>
       </geometry>      
     </visual> 
   </link>
 
-  <link name="castor_back_link">    
+  <link name="castor_back_link">
     <inertial>
       <mass value="0.02"/>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <inertia ixx="0.00052666666" ixy="0" ixz="0" iyy="0.00052666666" iyz="0" izz="0.001"/>
-    </inertial>
-    
+    </inertial>   
     <collision name="castor_collision">
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <sphere radius="0.025"/>
+        <mesh filename="package://pmr/meshes/har_castor_ball.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
-    
     <visual name="castor_visual">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <sphere radius="0.025"/>
+        <mesh filename="package://pmr/meshes/har_castor_ball.stl" scale="0.001 0.001 0.001"/>
       </geometry>      
     </visual>  
   </link>
-  
+
+  <link name="middle_link">    
+    <inertial>
+      <mass value="1"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.052666666" ixy="0" ixz="0" iyy="0.052666666" iyz="0" izz="0.001"/>
+    </inertial>
+    
+    <collision name="middle_collision">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://pmr/meshes/middle.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    
+    <visual name="middle_visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://pmr/meshes/middle.dae" scale="1 1 1"/>
+      </geometry>      
+    </visual>  
+  </link>
+
+
+
+  <link name="medic_link">    
+    <collision name="medic_collision">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://pmr/meshes/medic.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    
+    <visual name="medic_visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://pmr/meshes/medic.dae" scale="1 1 1"/>
+      </geometry>      
+    </visual>  
+  </link>
+
+  <link name="head_link">       
+    <collision name="head_collision">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://pmr/meshes/head.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    
+    <visual name="head_visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://pmr/meshes/head.dae" scale="1 1 1"/>
+      </geometry>
+
+    </visual>
+  </link>
+
+  <link name="support_link">       
+    <collision name="support_collision">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://pmr/meshes/support.dae" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    
+    <visual name="support_visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://pmr/meshes/support.dae" scale="1 1 1"/>
+      </geometry>      
+    </visual>  
+  </link>
+
+
 <xacro:link_wheel name="link_right_wheel" />
 <xacro:link_wheel name="link_left_wheel" />
-<xacro:link_dummy name="link_dummy" />
 
+<xacro:joint_wheel name="joint_right_wheel"  child="link_right_wheel"  origin_xyz="-0.0 0.24 0.0325" axis_xyz="0 1 0" origin_rpy="0 0 0"/>
+<xacro:joint_wheel name="joint_left_wheel"   child="link_left_wheel"   origin_xyz="-0.0 -0.24 0.0325" axis_xyz="0 1 0" origin_rpy="0 0 0"/>
+<xacro:joint_wheel name="joint_castor_front"   child="castor_front_link"   origin_xyz="0.2 0 -0.0175" axis_xyz="0 0 1" origin_rpy="0 0 0"/>
+<xacro:joint_wheel name="joint_castor_back"   child="castor_back_link"   origin_xyz="-0.2 0 -0.0175" axis_xyz="0 0 1" origin_rpy="0 0 0"/>
+<xacro:joint_wheel name="camera_joint"   child="camera_link"   origin_xyz="0.25 0 1.5" axis_xyz="0 1 0" origin_rpy="0 0 0"/>
 
-<xacro:joint_wheel name="joint_right_wheel"  child="link_right_wheel"  origin_xyz="0 0.2 0" axis_xyz="0 1 0" origin_rpy="0 0 0"/>
-<xacro:joint_wheel name="joint_left_wheel"   child="link_left_wheel"   origin_xyz="0 -0.2 0" axis_xyz="0 1 0" origin_rpy="0 0 0"/>
-<xacro:joint_wheel name="joint_castor_front"   child="castor_front_link"   origin_xyz="0.2 0 -0.025" axis_xyz="1 0 0" origin_rpy="0 0 0"/>
-<xacro:joint_wheel name="joint_castor_back"   child="castor_back_link"   origin_xyz="-0.2 0 -0.025" axis_xyz="1 0 0" origin_rpy="0 0 0"/>
-<xacro:joint_wheel name="camera_joint"   child="camera_link"   origin_xyz="0 0 0.55" axis_xyz="0 1 0" origin_rpy="0 0 0"/>
-<xacro:joint_wheel name="dummy_joint"   child="link_dummy"   origin_xyz="0 0 0.44" axis_xyz="0 1 0" origin_rpy="0 0 0"/>
+<xacro:fixed_joint name="joint_middle"   child="middle_link"   origin_xyz="0 0 0" origin_rpy="0 0 1.5708"/>
 
+<xacro:fixed_joint name="joint_medic"   child="medic_link"   origin_xyz="0 0 0" origin_rpy="0 0 1.5708"/>
+
+<xacro:fixed_joint name="joint_head"   child="head_link"   origin_xyz="0 0 0" origin_rpy="0 0 1.5708"/>
+
+<xacro:fixed_joint name="joint_support"   child="support_link"   origin_xyz="0 0 0" origin_rpy="0 0 1.5708"/>
 
 </robot>

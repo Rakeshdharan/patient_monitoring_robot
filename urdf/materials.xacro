@@ -13,7 +13,7 @@
     <color rgba="0.2 0.2 0.2 1.0"/>
   </material>
   <material name="orange">
-    <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+    <color rgba="1.0 0.423529411765 0.0392156862745 0.5"/>
   </material>
   <material name="brown">
     <color rgba="0.870588235294 0.811764705882 0.764705882353 1.0"/>
@@ -23,5 +23,11 @@
   </material>
   <material name="white">
     <color rgba="1.0 1.0 1.0 1.0"/>
-  </material>  
+  </material>
+  <material name="alu">
+    <color rgba="132 135 137 0.5"/>
+  </material>
+  <material name="darkblue">
+    <color rgba="41 86 143 1.0"/>
+  </material>
 </robot>
